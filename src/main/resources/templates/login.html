@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Ingreso</title>
+</head>
+<body>
+
+	<form data-th-action="@{/ingreso}" method="post">
+		Usuario: <input type="text" name="username" />
+		Contraseña: <input type="password" name="password" />
+		Adicional: <input type="text" name="adicional" /> 
+		<button type="submit">Ingresar</button>
+	</form>
+
+</body>
+</html>

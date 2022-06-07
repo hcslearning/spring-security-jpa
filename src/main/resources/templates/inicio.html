@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Inicio</title>
+</head>
+<body>
+
+	<div data-th-replace="parts/header :: menu"></div>
+	
+	<h1>Inicio</h1>
+	
+	<p data-sec-authorize="hasRole('ADMIN')">Bienvenido ADMIN</p>
+	<p data-sec-authorize="hasRole('CLIENTE')">Bienvenido CLIENTE</p>
+	
+	<img data-th-src="@{/img/img.png}" alt="imagen ejemplo" />
+</body>
+</html>
