@@ -25,6 +25,12 @@ public class Usuario implements UserDetails {
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
+		// si usamos el prefijo ROLE_ podemos usar posteriormente hasRole('ADMIN') u otro
+		// si NO usamos el prefijo ROLE_ podremos usar el método hasAuthority('ADMIN')
+		// ROLE está pensado para representar un grupo de permisos
+		// AUTHORITY está pensado para representar un permiso muy granulado ej. READ, WRITE, etc
+		// Spring Security no tiene métodos ni clases diferentes para soportar roles y authorities 
+		// solo hace la distinción a través del prefijo 
 		if( administrador != null ) {
 			return List.of( new SimpleGrantedAuthority("ROLE_ADMIN") );
 		} else {
